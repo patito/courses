@@ -31,7 +31,6 @@ def create_store():
 
 @app.route('/store/<string:name>')
 def get_store(name):
-    store = list(filter(lambda s: s["name"] == name, stores))
     for store in stores:
         if store['name'] == name:
             return jsonify(store), 200
